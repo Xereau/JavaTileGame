@@ -1,0 +1,22 @@
+package dev.brandonfiege.javatilegame;
+
+import dev.brandonfiege.javatilegame.display.Display;
+
+public class Game 
+{
+	// this class holds all the base code for the game.
+	
+	private Display display;
+	
+	public int width, height;
+	
+	public Game(String title, int width, int height)
+	{
+		this.width = width;
+		this.height = height;
+		
+		display = new Display(title, width, height);
+		
+		
+	}
+}

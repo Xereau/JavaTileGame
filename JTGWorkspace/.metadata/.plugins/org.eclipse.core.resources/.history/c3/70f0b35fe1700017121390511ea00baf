@@ -1,0 +1,44 @@
+package dev.brandonfiege.javatilegame;
+
+import dev.brandonfiege.javatilegame.display.Display;
+
+public class Game implements Runnable  			// "implements runnable" allows this class to run in its own thread
+												// be sure to add a public void run() method in your class. 
+{
+	// this class holds all the base code for the game.
+	
+	private Display display;	
+	public int width, height;
+	
+	private Thread thread; 		// this is the new thread that this will run on. 
+	
+	
+	public Game(String title, int width, int height)
+	{
+		this.width = width;
+		this.height = height;
+		
+		display = new Display(title, width, height);
+		
+		
+	}
+	
+	public void run()
+	{
+		
+	}
+	
+	
+	// you basically only use the keyword "SYNCHRONIZED" when working with threads directly.
+	public synchronized void start()		// starts the thread
+	{
+		 // must initialize the new thread
+		thread = new Thread(this);
+		thread.start();
+	}
+	
+	public synchronized void stop()			// stops the thread
+	{
+		
+	}
+}
